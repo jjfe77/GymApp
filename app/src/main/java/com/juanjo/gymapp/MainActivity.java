@@ -57,10 +57,17 @@ public class MainActivity extends AppCompatActivity {
                         String rol = json.getString("rol");
 
                         if (rol.equals("Profesor")) {
-                            startActivity(new Intent(this, ProfesorActivity.class));
+                            //startActivity(new Intent(this, ProfesorActivity.class));
+                            Intent intent = new Intent(this, AlumnoActivity.class);
+                            intent.putExtra("dni", dni);
+                            startActivity(intent);
+
 
                         } else if (rol.equals("Alumno")) {
-                            startActivity(new Intent(this, AlumnoActivity.class));
+                            //startActivity(new Intent(this, AlumnoActivity.class));
+                            Intent intent = new Intent(this, AlumnoActivity.class);
+                            intent.putExtra("dni", dni);
+                            startActivity(intent);
 
                         } else {
                             Toast.makeText(this, "DNI incorrecto", Toast.LENGTH_SHORT).show();

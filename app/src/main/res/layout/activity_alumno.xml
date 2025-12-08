@@ -7,18 +7,48 @@
     android:layout_height="match_parent"
     tools:context=".AlumnoActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="20dp">
 
         <TextView
-            android:text="Bienvenido Alumno"
-            android:textSize="24sp"
-            android:layout_width="wrap_content"
+            android:id="@+id/txtNombreAlumno"
+            android:text="Alumno:"
+            android:textSize="20sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
+        <Spinner
+            android:id="@+id/spinnerRutinas"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:text="Ejercicios de la rutina:"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ListView
+            android:id="@+id/listaEjercicios"
+            android:layout_width="match_parent"
+            android:layout_height="495dp" />
+
+        <Button
+            android:id="@+id/buttonVerProgresos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver Progresos"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"/>
+
+
     </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
