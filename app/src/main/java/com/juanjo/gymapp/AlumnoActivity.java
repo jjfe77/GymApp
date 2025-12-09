@@ -70,11 +70,25 @@ public class AlumnoActivity extends AppCompatActivity {
         //dni = getIntent().getStringExtra("dni");
 
         obtenerIdAlumno(dni);
+
+        Button btnMostrarProgresos = findViewById(R.id.btnMostrarProgresos);
+        btnMostrarProgresos.setOnClickListener(v -> {
+            Intent intent = new Intent(AlumnoActivity.this, ProgresosActivity.class);
+            intent.putExtra("idAlumno", idAlumno);
+            startActivity(intent);
+        });
+
+
+
+
+
+
     }
 
     // --------------- Buscar alumno por DNI ---------------
     private void buscarAlumno() {
         String url = "http://10.0.2.2/api/buscar_usuario_usuario.php?dni=" + dni;
+        //String url = "http://10.0.2.2/api/buscar_id_por_dni.php?dni=" + dni;
         Log.i(TAG, "buscarAlumno - URL: " + url);
 
         StringRequest req = new StringRequest(Request.Method.GET, url,
@@ -326,9 +340,6 @@ public class AlumnoActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(this).add(req);
     }
-
-
-
 
 
 }

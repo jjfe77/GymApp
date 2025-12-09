@@ -46,8 +46,10 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
+        // Construimos la URL con el parámetro GET
         String url = URL_LOGIN + "?dni=" + dni;
 
+        // Petición GET con Volley
         StringRequest request = new StringRequest(
                 Request.Method.GET,
                 url,
@@ -57,27 +59,24 @@ public class MainActivity extends AppCompatActivity {
                         String rol = json.getString("rol");
 
                         if (rol.equals("Profesor")) {
-                            //startActivity(new Intent(this, ProfesorActivity.class));
-                            Intent intent = new Intent(this, AlumnoActivity.class);
+                            Intent intent = new Intent(MainActivity.this, ProfesorActivity.class);
                             intent.putExtra("dni", dni);
                             startActivity(intent);
 
-
                         } else if (rol.equals("Alumno")) {
-                            //startActivity(new Intent(this, AlumnoActivity.class));
-                            Intent intent = new Intent(this, AlumnoActivity.class);
+                            Intent intent = new Intent(MainActivity.this, AlumnoActivity.class);
                             intent.putExtra("dni", dni);
                             startActivity(intent);
 
                         } else {
-                            Toast.makeText(this, "DNI incorrecto", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "DNI incorrecto", Toast.LENGTH_SHORT).show();
                         }
 
                     } catch (Exception e) {
-                        Toast.makeText(this, "Error en JSON", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this, "Error en JSON", Toast.LENGTH_SHORT).show();
                     }
                 },
-                error -> Toast.makeText(this, "Error de conexión: " + error.getMessage(), Toast.LENGTH_LONG).show()
+                error -> Toast.makeText(MainActivity.this, "Error de conexión: " + error.getMessage(), Toast.LENGTH_LONG).show()
         );
 
         Volley.newRequestQueue(this).add(request);

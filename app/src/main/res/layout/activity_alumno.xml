@@ -40,12 +40,13 @@
             android:layout_height="495dp" />
 
         <Button
-            android:id="@+id/buttonVerProgresos"
-            android:layout_width="wrap_content"
+            android:id="@+id/btnMostrarProgresos"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Ver Progresos"
-            android:layout_marginTop="16dp"
-            android:layout_gravity="center_horizontal"/>
+            android:text="Mostrar Progresos"
+            android:layout_marginTop="20dp"/>
+
+
 
 
     </LinearLayout>
