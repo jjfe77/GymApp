@@ -17,6 +17,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.TextView;
+
 public class ProgresosActivity extends AppCompatActivity {
 
     private static final String TAG = "PROGRESOS_DEBUG";
@@ -42,7 +46,7 @@ public class ProgresosActivity extends AppCompatActivity {
         cargarProgresos();
     }
 
-    private void cargarProgresos() {
+    /*private void cargarProgresos() {
         String url = "http://10.0.2.2/api/ver_progreso_android.php?id_alumno=" + idAlumno;
         Log.i(TAG, "URL: " + url);
 
@@ -91,5 +95,58 @@ public class ProgresosActivity extends AppCompatActivity {
                 });
 
         Volley.newRequestQueue(this).add(req);
+    }*/
+    private void cargarProgresos() {
+        String url = "http://10.0.2.2/api/ver_progreso_android.php?id_alumno=" + idAlumno;
+
+        StringRequest req = new StringRequest(Request.Method.GET, url,
+                response -> {
+                    try {
+                        JSONArray arr = new JSONArray(response);
+
+                        ArrayList<String> listaEjercicios = new ArrayList<>();
+                        ArrayList<String> listaDetalles = new ArrayList<>();
+
+                        for (int i = 0; i < arr.length(); i++) {
+                            JSONObject obj = arr.getJSONObject(i);
+                            String fecha = obj.optString("fecha", "");
+                            String ejercicio = obj.optString("ejercicio", "");
+                            int seriesPlan = obj.optInt("series_plan", 0);
+                            int seriesReal = obj.optInt("series_real", 0);
+                            int repesPlan = obj.optInt("repes_plan", 0);
+                            int repesReal = obj.optInt("repes_real", 0);
+                            double cargaPlan = obj.optDouble("carga_plan", 0);
+                            double cargaReal = obj.optDouble("carga_real", 0);
+
+                            listaEjercicios.add(ejercicio);
+                            listaDetalles.add("Fecha: " + fecha +
+                                    " | Plan: " + seriesPlan + "x" + repesPlan + " (" + cargaPlan + "kg)" +
+                                    " | Real: " + seriesReal + "x" + repesReal + " (" + cargaReal + "kg)");
+                        }
+
+                        ArrayAdapter<String> adaptador = new ArrayAdapter<String>(this,
+                                R.layout.item_progreso, R.id.txtEjercicio, listaEjercicios) {
+                            @Override
+                            public View getView(int position, View convertView, ViewGroup parent) {
+                                View view = super.getView(position, convertView, parent);
+                                TextView txtDetalle = view.findViewById(R.id.txtDetalle);
+                                txtDetalle.setText(listaDetalles.get(position));
+                                return view;
+                            }
+                        };
+
+                        listaProgresos.setAdapter(adaptador);
+
+                    } catch (Exception e) {
+                        Toast.makeText(this, "Error parseando JSON", Toast.LENGTH_LONG).show();
+                    }
+                },
+                error -> Toast.makeText(this, "Error conexión progresos", Toast.LENGTH_LONG).show());
+
+        Volley.newRequestQueue(this).add(req);
     }
+
+
+
+
 }

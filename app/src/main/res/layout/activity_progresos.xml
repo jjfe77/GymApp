@@ -15,8 +15,16 @@
 
         <ListView
             android:id="@+id/listaProgresos"
+            android:divider="@android:color/darker_gray"
+            android:dividerHeight="1dp"
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
+
+
+
+
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
