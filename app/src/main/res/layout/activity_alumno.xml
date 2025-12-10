@@ -9,6 +9,7 @@
 
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
@@ -16,19 +17,24 @@
 
         <TextView
             android:id="@+id/txtNombreAlumno"
+            android:background="@drawable/bg_ejercicio"
             android:text="Alumno:"
+            android:layout_marginTop="30dp"
             android:textSize="20sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <Spinner
             android:id="@+id/spinnerRutinas"
+            android:background="@drawable/bg_detalle"
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/bg_ejercicio"
+
             android:text="Ejercicios de la rutina:"
             android:textSize="18sp"
             android:layout_width="match_parent"
@@ -36,8 +42,10 @@
 
         <ListView
             android:id="@+id/listaEjercicios"
+            android:background="@drawable/bg_detalle"
+            android:textColor="#555555"
             android:layout_width="match_parent"
-            android:layout_height="495dp" />
+            android:layout_height="435dp" />
 
         <Button
             android:id="@+id/btnMostrarProgresos"

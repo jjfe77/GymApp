@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_pantalla"
+    tools:context=".GaleriaActivity">
+
+
+
+    <TextView
+        android:id="@+id/tituloGaleria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="Galería de Ejercicios"
+        android:textColor="@android:color/black"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tituloGaleria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:padding="20dp"
+        android:text="Oprima una imagen para ver el video correspondiente"
+        android:textColor="@android:color/black"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <GridLayout
+        android:id="@+id/gridGaleria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="3"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tituloGaleria"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="center">
+
+
+        <ImageButton
+            android:id="@+id/btnVideo1"
+            android:layout_margin="8dp"
+            android:background="@drawable/boton_redondeado"
+            android:padding="8dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:contentDescription="Video 1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/banca" />
+
+        <ImageButton
+            android:id="@+id/btnVideo2"
+            android:layout_margin="8dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/boton_redondeado"
+            android:padding="8dp"
+            android:contentDescription="Video 2"
+            android:scaleType="centerCrop"
+            android:src="@drawable/bicicleta" />
+
+        <ImageButton
+            android:id="@+id/btnVideo3"
+            android:layout_margin="8dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/boton_redondeado"
+            android:padding="8dp"
+            android:contentDescription="Video 3"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cinta" />
+
+        <ImageButton
+            android:id="@+id/btnVideo4"
+            android:layout_margin="8dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/boton_redondeado"
+            android:padding="8dp"
+            android:contentDescription="Video 4"
+            android:scaleType="centerCrop"
+            android:src="@drawable/multifuncion" />
+
+        <ImageButton
+            android:id="@+id/btnVideo5"
+            android:layout_margin="8dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/boton_redondeado"
+            android:padding="8dp"
+            android:contentDescription="Video 5"
+            android:scaleType="centerCrop"
+            android:src="@drawable/pecho1" />
+
+        <ImageButton
+            android:id="@+id/btnVideo6"
+            android:layout_margin="8dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/boton_redondeado"
+            android:padding="8dp"
+            android:contentDescription="Video 6"
+            android:scaleType="centerCrop"
+            android:src="@drawable/piernas1" />
+        <ImageButton
+             />
+
+        <ImageButton
+            android:id="@+id/btnVideo7"
+            android:layout_margin="8dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:background="@drawable/boton_redondeado"
+            android:padding="8dp"
+            android:contentDescription="Video 7"
+            android:scaleType="centerCrop"
+            android:src="@drawable/escudo" />
+
+    </GridLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

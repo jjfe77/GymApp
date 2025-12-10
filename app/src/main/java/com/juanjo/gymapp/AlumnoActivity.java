@@ -69,7 +69,7 @@ public class AlumnoActivity extends AppCompatActivity {
         buscarAlumno();
         //dni = getIntent().getStringExtra("dni");
 
-        obtenerIdAlumno(dni);
+        //obtenerIdAlumno(dni);
 
         Button btnMostrarProgresos = findViewById(R.id.btnMostrarProgresos);
         btnMostrarProgresos.setOnClickListener(v -> {
@@ -87,7 +87,8 @@ public class AlumnoActivity extends AppCompatActivity {
 
     // --------------- Buscar alumno por DNI ---------------
     private void buscarAlumno() {
-        String url = "http://10.0.2.2/api/buscar_usuario_usuario.php?dni=" + dni;
+        //String url = "http://10.0.2.2/api/buscar_usuario_usuario.php?dni=" + dni;
+        String url = "http://192.168.0.217/api/buscar_usuario_usuario.php?dni=" + dni;//Fibertel
         //String url = "http://10.0.2.2/api/buscar_id_por_dni.php?dni=" + dni;
         Log.i(TAG, "buscarAlumno - URL: " + url);
 
@@ -127,7 +128,8 @@ public class AlumnoActivity extends AppCompatActivity {
 
     // --------------- Cargar rutinas del alumno ---------------
     private void cargarRutinas() {
-        String url = "http://10.0.2.2/api/listar_rutinas_android.php?id=" + idAlumno;
+        String url = "http://192.168.0.217/api/listar_rutinas_android.php?id=" + idAlumno;
+        //String url = "http://10.0.2.2/api/listar_rutinas_android.php?id=" + idAlumno;
         Log.i(TAG, "cargarRutinas - URL: " + url);
 
         StringRequest req = new StringRequest(Request.Method.GET, url,
@@ -179,7 +181,8 @@ public class AlumnoActivity extends AppCompatActivity {
 
     // --------------- Cargar ejercicios de la rutina ---------------
     private void cargarEjercicios(int idRutina) {
-        String url = "http://10.0.2.2/api/listar_ejercicios_android.php?id_rutina=" + idRutina;
+        String url = "http://192.168.0.217/api/listar_ejercicios_android.php?id_rutina=" + idRutina;
+        //String url = "http://10.0.2.2/api/listar_ejercicios_android.php?id_rutina=" + idRutina;
         Log.i(TAG, "cargarEjercicios - URL: " + url);
 
         StringRequest req = new StringRequest(Request.Method.GET, url,
@@ -281,7 +284,8 @@ public class AlumnoActivity extends AppCompatActivity {
 
     // --------------- Guardar progreso (POST) ---------------
     private void guardarProgreso(int idRutina, int idRutinaEjercicio, String series, String repes, String carga) {
-        String url = "http://10.0.2.2/api/guardar_progreso_android.php";
+        String url = "http://192.168.0.217/api/guardar_progreso_android.php";
+        //String url = "http://10.0.2.2/api/guardar_progreso_android.php";
         Log.i(TAG, "guardarProgreso -> " + url);
 
         StringRequest req = new StringRequest(Request.Method.POST, url,
@@ -322,9 +326,10 @@ public class AlumnoActivity extends AppCompatActivity {
 
         Volley.newRequestQueue(this).add(req);
     }
-
+/*
     private void obtenerIdAlumno(String dniStr) {
-        String url = "http://10.0.2.2/api/buscar_id_por_dni.php?dni=" + dni;
+        String url = "http://192.168.0.217/api/guardar_progreso_android.php";
+        //String url = "http://10.0.2.2/api/guardar_progreso_android.php";
 
         StringRequest req = new StringRequest(Request.Method.GET, url,
                 response -> {
@@ -339,7 +344,7 @@ public class AlumnoActivity extends AppCompatActivity {
         );
 
         Volley.newRequestQueue(this).add(req);
-    }
+    }*/
 
 
 }

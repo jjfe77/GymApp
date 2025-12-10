@@ -20,7 +20,8 @@ public class MainActivity extends AppCompatActivity {
     EditText txtDni;
     Button btnLogin;
 
-    String URL_LOGIN = "http://10.0.2.2/api/login.php";  // <<--- CAMBIAR AQUÍ
+    //String URL_LOGIN = "http://10.0.2.2/api/login.php";  // <<--- CAMBIAR AQUÍ
+    String URL_LOGIN = "http://192.168.0.217/api/login.php";  // <<--- Fibertel
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,17 @@ public class MainActivity extends AppCompatActivity {
                 validarLogin();
             }
         });
+
+        Button btnGaleria = findViewById(R.id.btnGaleria);
+
+        btnGaleria.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, GaleriaActivity.class);
+                startActivity(intent);
+            }
+        });
+
     }
 
     private void validarLogin() {
