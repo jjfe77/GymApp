@@ -7,18 +7,112 @@
     android:layout_height="match_parent"
     tools:context=".ProfesorActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:text="Bienvenido Profesor"
-            android:textSize="24sp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-    </LinearLayout>
+            <!-- Título -->
+            <TextView
+                android:text="Bienvenido Profesor"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
 
+            <TextView
+                android:text="Alumno"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerAlumnos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/editNombreRutina"
+                android:hint="Nombre de la rutina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+
+            <TextView
+                android:text="Ejercicio"
+                android:textStyle="bold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerEjercicios"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <!-- Campos de series, repeticiones y carga -->
+            <EditText
+                android:id="@+id/editSeries"
+                android:hint="Series"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:id="@+id/editRepeticiones"
+                android:hint="Repeticiones"
+                android:inputType="number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <EditText
+                android:id="@+id/editCarga"
+                android:hint="Carga (kg)"
+                android:inputType="numberDecimal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <!-- Botón para agregar ejercicio -->
+            <Button
+                android:id="@+id/btnAgregarEjercicio"
+                android:text="Agregar ejercicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"/>
+
+            <!-- Lista de ejercicios agregados -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRutina"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Botón para guardar rutina -->
+            <Button
+                android:id="@+id/btnGuardarRutina"
+                android:text="Guardar rutina"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <Button
+                android:id="@+id/btnCrearEjercicio"
+                android:text="Crear nuevo ejercicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

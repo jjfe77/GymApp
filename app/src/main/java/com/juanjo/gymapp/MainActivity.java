@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnLogin;
 
     //String URL_LOGIN = "http://10.0.2.2/api/login.php";  // <<--- CAMBIAR AQUÍ
-    String URL_LOGIN = "http://192.168.0.217/api/login.php";  // <<--- Fibertel
+    String URL_LOGIN = "http://"+ Config.IP +"/api/login.php";  // <<--- Fibertel
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

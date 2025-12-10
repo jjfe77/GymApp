@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:padding="20dp"
-        android:text="Oprima una imagen para ver el video correspondiente"
+        android:text="Oprima una imagen para ver el video correspondiente, reprodur con el dispositivo vertical"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"

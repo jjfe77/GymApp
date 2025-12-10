@@ -29,22 +29,17 @@ public class GaleriaActivity extends AppCompatActivity {
         ImageButton btnVideo7 = findViewById(R.id.btnVideo7);
 
         // Asignar listeners con URLs distintas
-        btnVideo1.setOnClickListener(v -> abrirVideo("http://192.168.0.217/Media/video1.mp4"));
-        btnVideo2.setOnClickListener(v -> abrirVideo("http://192.168.0.217/Media/video2.mp4"));
-        btnVideo3.setOnClickListener(v -> abrirVideo("http://192.168.0.217/Media/video3.mp4"));
-        btnVideo4.setOnClickListener(v -> abrirVideo("http://192.168.0.217/Media/video4.mp4"));
-        btnVideo5.setOnClickListener(v -> abrirVideo("http://192.168.0.217/Media/video5.mp4"));
-        btnVideo6.setOnClickListener(v -> abrirVideo("http://192.168.0.217/Media/video6.mp4"));
-        btnVideo7.setOnClickListener(v -> abrirVideo("http://192.168.0.217/Media/video7.mp4"));
+        btnVideo1.setOnClickListener(v -> abrirVideo(Config.MEDIA_URL + "video1.mp4"));
+        btnVideo2.setOnClickListener(v -> abrirVideo(Config.MEDIA_URL + "video2.mp4"));
+        btnVideo3.setOnClickListener(v -> abrirVideo(Config.MEDIA_URL + "video3.mp4"));
+        btnVideo4.setOnClickListener(v -> abrirVideo(Config.MEDIA_URL + "video4.mp4"));
+        btnVideo5.setOnClickListener(v -> abrirVideo(Config.MEDIA_URL + "video5.mp4"));
+        btnVideo6.setOnClickListener(v -> abrirVideo(Config.MEDIA_URL + "video6.mp4"));
+        btnVideo7.setOnClickListener(v -> abrirVideo(Config.MEDIA_URL + "video7.mp4"));
     }
 
     // Método para abrir el video
-    /*
-    private void abrirVideo(String urlVideo) {
-        Intent intent = new Intent(Intent.ACTION_VIEW);
-        intent.setDataAndType(Uri.parse(urlVideo), "video/mp4");
-        startActivity(intent);
-    }*/
+
 
     private void abrirVideo(String urlVideo) {
         Intent intent = new Intent(this, PlayerActivity.class);

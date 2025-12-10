@@ -18,11 +18,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <TextView
+            android:id="@+id/tituloGaleria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:padding="30dp"
+            android:text="GYM: J.J.F."
+            android:textColor="@android:color/black"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/freescpt"
+
+            android:background="@drawable/bg_ejercicio"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
         <EditText
             android:id="@+id/txtDni"
             android:hint="Ingrese DNI"
             android:inputType="number"
-            android:padding="12dp"
+            android:padding="25dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
