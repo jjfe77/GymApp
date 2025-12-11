@@ -124,21 +124,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"/>
 
-            <TextView
-                android:id="@+id/textRutinasAlumno"
-                android:text="Rutinas del alumno"
-                android:background="@drawable/bg_ejercicio"
-                android:textStyle="bold"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"/>
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerRutinasAlumno"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@drawable/bg_detalle"/>
+
+
 
             <Button
                 android:id="@+id/btnModificarRutina"

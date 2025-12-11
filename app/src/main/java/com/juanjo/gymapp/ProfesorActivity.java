@@ -32,7 +32,10 @@ public class ProfesorActivity extends AppCompatActivity {
     private List<Alumno> listaAlumnos = new ArrayList<>();
     private List<Ejercicio> listaEjercicios = new ArrayList<>();
     private List<RutinaEjercicio> rutinaEjercicios = new ArrayList<>();
+    // Lista de IDs de alumnos que corresponde al Spinner
+    private List<Integer> alumnosIds = new ArrayList<>();
     private RutinaAdapter rutinaAdapter;
+    //private int idAlumnoSeleccionado;
 
     private int idRutinaSeleccionada;
 
@@ -87,12 +90,24 @@ public class ProfesorActivity extends AppCompatActivity {
 
         btnAgregarEjercicio.setOnClickListener(v -> agregarEjercicio());
         btnGuardarRutina.setOnClickListener(v -> guardarRutina());
-        /*btnCrearEjercicio.setOnClickListener(v -> {
-            // Aquí abrirías CrearEjercicioActivity
-            Toast.makeText(this, "Abrir pantalla de crear ejercicio", Toast.LENGTH_SHORT).show();
-        });*/
 
-        
+
+        btnModificarRutina.setOnClickListener(v -> {
+            int pos = spinnerAlumnos.getSelectedItemPosition();
+
+            if (pos >= 0 && pos < listaAlumnos.size()) {
+                int idAlumno = listaAlumnos.get(pos).getId();
+
+                Intent intent = new Intent(ProfesorActivity.this, ModificarRutinaActivity.class);
+                intent.putExtra("idAlumno", idAlumno);
+                startActivity(intent);
+            } else {
+                Toast.makeText(this, "Selecciona un alumno válido", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+
 
 
 

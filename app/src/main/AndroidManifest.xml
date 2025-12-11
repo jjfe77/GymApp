@@ -15,6 +15,9 @@
         android:theme="@style/Theme.GymApp"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ModificarRutinaActivity"
+            android:exported="false" />
+        <activity
             android:name=".CrearEjercicioActivity"
             android:exported="false" />
         <activity
