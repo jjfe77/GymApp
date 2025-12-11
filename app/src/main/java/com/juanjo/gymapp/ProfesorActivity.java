@@ -168,8 +168,9 @@ public class ProfesorActivity extends AppCompatActivity {
             int series = Integer.parseInt(editSeries.getText().toString());
             int repeticiones = Integer.parseInt(editRepeticiones.getText().toString());
             double carga = Double.parseDouble(editCarga.getText().toString());
+            String nombreEjercicio = spinnerEjercicios.getSelectedItem().toString();
 
-            rutinaEjercicios.add(new RutinaEjercicio(idEjercicioSeleccionado, series, repeticiones, carga));
+            rutinaEjercicios.add(new RutinaEjercicio(idEjercicioSeleccionado, series, repeticiones, carga, nombreEjercicio));
             rutinaAdapter.notifyDataSetChanged();
 
             editSeries.setText("");

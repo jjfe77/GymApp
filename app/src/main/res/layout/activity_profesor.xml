@@ -97,6 +97,7 @@
             <!-- Botón para agregar ejercicio -->
             <Button
                 android:id="@+id/btnAgregarEjercicio"
+                android:background="@drawable/bg_boton"
                 android:text="Agregar ejercicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,6 +113,7 @@
             <!-- Botón para guardar rutina -->
             <Button
                 android:id="@+id/btnGuardarRutina"
+                android:background="@drawable/bg_boton"
                 android:text="Guardar rutina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,6 +121,8 @@
 
             <Button
                 android:id="@+id/btnCrearEjercicio"
+                android:background="@drawable/bg_boton"
+
                 android:text="Crear nuevo ejercicio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -130,6 +134,7 @@
 
             <Button
                 android:id="@+id/btnModificarRutina"
+                android:background="@drawable/bg_boton"
                 android:text="Modificar rutina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

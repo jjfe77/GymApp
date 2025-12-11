@@ -49,6 +49,7 @@
 
         <Button
             android:id="@+id/btnMostrarProgresos"
+            android:background="@drawable/bg_boton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Mostrar Progresos"
