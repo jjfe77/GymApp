@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     tools:context=".ProfesorActivity">
 
     <ScrollView
@@ -19,6 +20,8 @@
 
             <!-- Título -->
             <TextView
+                android:background="@drawable/bg_ejercicio"
+                android:layout_marginTop="30dp"
                 android:text="Bienvenido Profesor"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -28,18 +31,21 @@
 
             <TextView
                 android:text="Alumno"
+                android:background="@drawable/bg_ejercicio"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"/>
 
             <Spinner
                 android:id="@+id/spinnerAlumnos"
+                android:background="@drawable/bg_detalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <EditText
                 android:id="@+id/editNombreRutina"
+                android:background="@drawable/bg_ejercicio"
                 android:hint="Nombre de la rutina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -48,19 +54,22 @@
 
             <TextView
                 android:text="Ejercicio"
+                android:background="@drawable/bg_ejercicio"
                 android:textStyle="bold"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"/>
 
             <Spinner
                 android:id="@+id/spinnerEjercicios"
+                android:background="@drawable/bg_detalle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
 
             <!-- Campos de series, repeticiones y carga -->
             <EditText
                 android:id="@+id/editSeries"
+                android:background="@drawable/bg_detalle"
                 android:hint="Series"
                 android:inputType="number"
                 android:layout_width="match_parent"
@@ -69,6 +78,7 @@
 
             <EditText
                 android:id="@+id/editRepeticiones"
+                android:background="@drawable/bg_detalle"
                 android:hint="Repeticiones"
                 android:inputType="number"
                 android:layout_width="match_parent"
@@ -77,6 +87,7 @@
 
             <EditText
                 android:id="@+id/editCarga"
+                android:background="@drawable/bg_detalle"
                 android:hint="Carga (kg)"
                 android:inputType="numberDecimal"
                 android:layout_width="match_parent"
@@ -95,7 +106,7 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerRutina"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"/>
 
             <!-- Botón para guardar rutina -->
@@ -109,6 +120,29 @@
             <Button
                 android:id="@+id/btnCrearEjercicio"
                 android:text="Crear nuevo ejercicio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"/>
+
+            <TextView
+                android:id="@+id/textRutinasAlumno"
+                android:text="Rutinas del alumno"
+                android:background="@drawable/bg_ejercicio"
+                android:textStyle="bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerRutinasAlumno"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_detalle"/>
+
+            <Button
+                android:id="@+id/btnModificarRutina"
+                android:text="Modificar rutina"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"/>
